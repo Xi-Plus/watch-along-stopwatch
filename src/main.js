@@ -1,18 +1,5 @@
 import stopwatch from './stopwatch.html?raw';
 
-if (document.getElementsByTagName('video').length === 0 && document.getElementsByTagName('iframe').length > 0) {
-	var iframeUrl = document.getElementsByTagName('iframe')[0].src;
-	var srcBlacklist = [
-		'',
-		'about:blank',
-	];
-	if (srcBlacklist.indexOf(iframeUrl) === -1) {
-		if (confirm('The video may be embedded from another page. Do you want to open the following url instead?\n' + iframeUrl)) {
-			window.location = iframeUrl;
-		}
-	}
-}
-
 var targetVideo, win, intervalId;
 
 function padZero(num) {
@@ -39,11 +26,19 @@ function updateTime() {
 
 function clickCallback(e) {
 	if (e.target.tagName == 'VIDEO') {
-		targetVideo = e.target;
 		document.removeEventListener('click', clickCallback);
+		for (let i = 0; i < document.getElementsByTagName('iframe').length; i++) {
+			document.getElementsByTagName('iframe')[i].contentDocument.removeEventListener('click', clickCallback);
+		}
+
+		targetVideo = e.target;
 		win = window.open('', '', 'width=250,height=60');
 		win.document.write(stopwatch);
 		intervalId = setInterval(updateTime, 5);
 	}
 }
+
 document.addEventListener('click', clickCallback);
+for (let i = 0; i < document.getElementsByTagName('iframe').length; i++) {
+	document.getElementsByTagName('iframe')[i].contentDocument.addEventListener('click', clickCallback);
+}
