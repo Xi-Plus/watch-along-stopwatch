@@ -9,7 +9,46 @@
     <ol>
       <li>
         拖曳此連結到書籤列：<a
-          href="javascript:(function(){ let script = document.createElement('script'); script.src = 'https://xi-plus.github.io/watch-along-stopwatch/watch-along-stopwatch.iife.js'; document.body.appendChild(script); })()"
+          href="javascript:(function(){&quot;use strict&quot;;var m=`&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta
+      name=&quot;viewport&quot;
+      content=&quot;width=device-width, initial-scale=1, minimum-scale=1&quot;
+    /&gt;
+    &lt;title&gt;Watch Along Stopwatch&lt;/title&gt;
+
+    &lt;style&gt;
+      body {
+        text-align: center;
+        font-family: sans-serif;
+        color: #000;
+        background: #04f404;
+      }
+
+      #stopwatch {
+        letter-spacing: 3px;
+        font-size: 36px;
+      }
+
+      #colon {
+        vertical-align: 7%;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div id=&quot;stopwatch&quot;&gt;
+      &lt;span id=&quot;hour&quot;&gt;00&lt;/span&gt;&lt;span id=&quot;colon&quot;&gt;:&lt;/span
+      &gt;&lt;span id=&quot;minute&quot;&gt;00&lt;/span&gt;&lt;span id=&quot;colon&quot;&gt;:&lt;/span
+      &gt;&lt;span id=&quot;second&quot;&gt;00&lt;/span&gt;&lt;span id=&quot;point&quot;&gt;.&lt;/span
+      &gt;&lt;span id=&quot;decisecond&quot;&gt;0&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+`,a=null,t,c;function i(e){return e.toString().padStart(2,&quot;0&quot;)}function s(){var e=a.currentTime,n=Math.floor(e),g=Math.floor((e-n)*100),l=Math.floor(n/60);n-=l*60;var d=Math.floor(l/60);l-=d*60,t.document.getElementById(&quot;hour&quot;).innerText=i(d),t.document.getElementById(&quot;minute&quot;).innerText=i(l),t.document.getElementById(&quot;second&quot;).innerText=i(n),t.document.getElementById(&quot;decisecond&quot;).innerText=i(g),t.closed&amp;&amp;clearInterval(c)}function r(){document.removeEventListener(&quot;click&quot;,o);for(let e=0;e&lt;document.getElementsByTagName(&quot;iframe&quot;).length;e++)document.getElementsByTagName(&quot;iframe&quot;)[e].contentDocument!==null&amp;&amp;document.getElementsByTagName(&quot;iframe&quot;)[e].contentDocument.removeEventListener(&quot;click&quot;,o)}function o(e){if(e.target.tagName==&quot;VIDEO&quot;)r(),a=e.target;else for(var n=e.target;n!=null;){if(n.getElementsByTagName(&quot;video&quot;).length===1){r(),a=n.getElementsByTagName(&quot;video&quot;)[0];break}else if(n.getElementsByTagName(&quot;video&quot;).length&gt;1){alert(&quot;2 or more videos found. I don&#39;t know which one is correct. Please try again.&quot;);return}n=n.parentElement}a!==null?(t=window.open(&quot;&quot;,&quot;&quot;,&quot;width=250,height=60&quot;),t.document.write(m),c=setInterval(s,5)):alert(&quot;I can&#39;t find any videos. Please try again.&quot;)}document.addEventListener(&quot;click&quot;,o);for(let e=0;e&lt;document.getElementsByTagName(&quot;iframe&quot;).length;e++)document.getElementsByTagName(&quot;iframe&quot;)[e].contentDocument!==null&amp;&amp;document.getElementsByTagName(&quot;iframe&quot;)[e].contentDocument.addEventListener(&quot;click&quot;,o)})();
+"
           >同步視聽碼表</a
         >。
       </li>
@@ -30,7 +69,46 @@
       <li>
         Drag this link to your bookmarks:
         <a
-          href="javascript:(function(){ let script = document.createElement('script'); script.src = 'https://xi-plus.github.io/watch-along-stopwatch/watch-along-stopwatch.iife.js'; document.body.appendChild(script); })()"
+          href="javascript:(function(){&quot;use strict&quot;;var m=`&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;utf-8&quot; /&gt;
+    &lt;meta
+      name=&quot;viewport&quot;
+      content=&quot;width=device-width, initial-scale=1, minimum-scale=1&quot;
+    /&gt;
+    &lt;title&gt;Watch Along Stopwatch&lt;/title&gt;
+
+    &lt;style&gt;
+      body {
+        text-align: center;
+        font-family: sans-serif;
+        color: #000;
+        background: #04f404;
+      }
+
+      #stopwatch {
+        letter-spacing: 3px;
+        font-size: 36px;
+      }
+
+      #colon {
+        vertical-align: 7%;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div id=&quot;stopwatch&quot;&gt;
+      &lt;span id=&quot;hour&quot;&gt;00&lt;/span&gt;&lt;span id=&quot;colon&quot;&gt;:&lt;/span
+      &gt;&lt;span id=&quot;minute&quot;&gt;00&lt;/span&gt;&lt;span id=&quot;colon&quot;&gt;:&lt;/span
+      &gt;&lt;span id=&quot;second&quot;&gt;00&lt;/span&gt;&lt;span id=&quot;point&quot;&gt;.&lt;/span
+      &gt;&lt;span id=&quot;decisecond&quot;&gt;0&lt;/span&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+`,a=null,t,c;function i(e){return e.toString().padStart(2,&quot;0&quot;)}function s(){var e=a.currentTime,n=Math.floor(e),g=Math.floor((e-n)*100),l=Math.floor(n/60);n-=l*60;var d=Math.floor(l/60);l-=d*60,t.document.getElementById(&quot;hour&quot;).innerText=i(d),t.document.getElementById(&quot;minute&quot;).innerText=i(l),t.document.getElementById(&quot;second&quot;).innerText=i(n),t.document.getElementById(&quot;decisecond&quot;).innerText=i(g),t.closed&amp;&amp;clearInterval(c)}function r(){document.removeEventListener(&quot;click&quot;,o);for(let e=0;e&lt;document.getElementsByTagName(&quot;iframe&quot;).length;e++)document.getElementsByTagName(&quot;iframe&quot;)[e].contentDocument!==null&amp;&amp;document.getElementsByTagName(&quot;iframe&quot;)[e].contentDocument.removeEventListener(&quot;click&quot;,o)}function o(e){if(e.target.tagName==&quot;VIDEO&quot;)r(),a=e.target;else for(var n=e.target;n!=null;){if(n.getElementsByTagName(&quot;video&quot;).length===1){r(),a=n.getElementsByTagName(&quot;video&quot;)[0];break}else if(n.getElementsByTagName(&quot;video&quot;).length&gt;1){alert(&quot;2 or more videos found. I don&#39;t know which one is correct. Please try again.&quot;);return}n=n.parentElement}a!==null?(t=window.open(&quot;&quot;,&quot;&quot;,&quot;width=250,height=60&quot;),t.document.write(m),c=setInterval(s,5)):alert(&quot;I can&#39;t find any videos. Please try again.&quot;)}document.addEventListener(&quot;click&quot;,o);for(let e=0;e&lt;document.getElementsByTagName(&quot;iframe&quot;).length;e++)document.getElementsByTagName(&quot;iframe&quot;)[e].contentDocument!==null&amp;&amp;document.getElementsByTagName(&quot;iframe&quot;)[e].contentDocument.addEventListener(&quot;click&quot;,o)})();
+"
           >Watch Along Stopwatch</a
         >.
       </li>
