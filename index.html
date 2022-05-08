@@ -5,18 +5,47 @@
     <title>Watch Along Stopwatch Bookmarklet</title>
   </head>
   <body>
-    <h2>同步視聽碼表書籤小程式 Watch Along Stopwatch Bookmarklet</h2>
+    <h2>同步視聽碼表書籤小程式</h2>
     <ol>
       <li>
-        拖曳此連結到書籤列 Drag this link to your bookmarks
+        拖曳此連結到書籤列：<a
+          href="javascript:(function(){ let script = document.createElement('script'); script.src = 'https://xi-plus.github.io/watch-along-stopwatch/watch-along-stopwatch.iife.js'; document.body.appendChild(script); })()"
+          >同步視聽碼表</a
+        >。
+      </li>
+      <li>在影片頁面點擊此小書籤。</li>
+      <li>
+        點擊影片視窗（讓影片播放）。
+        <ul>
+          <li>
+            如果你的點擊位置不正確，將會彈出警告框。如果沒有看到警告框，請嘗試點擊鄰近的元素，例如在Twitter影片上點擊文字區域。
+          </li>
+        </ul>
+      </li>
+      <li>應該會彈出一個碼錶視窗。</li>
+    </ol>
+
+    <h2>Watch Along Stopwatch Bookmarklet</h2>
+    <ol>
+      <li>
+        Drag this link to your bookmarks:
         <a
           href="javascript:(function(){ let script = document.createElement('script'); script.src = 'https://xi-plus.github.io/watch-along-stopwatch/watch-along-stopwatch.iife.js'; document.body.appendChild(script); })()"
           >Watch Along Stopwatch</a
-        >
+        >.
       </li>
-      <li>在影片頁面點擊此小書籤 Click this bookmarklet on video page</li>
-      <li>點擊影片視窗（讓影片播放） Click the video box (Let video play)</li>
-      <li>應該會彈出一個碼錶視窗 A stopwatch window should be popup</li>
+      <li>Click this bookmarklet on video page.</li>
+      <li>
+        Click the video box (Let video play).
+        <ul>
+          <li>
+            An alert box always pops up if your selection is incorrect. If there
+            no alert box, try to click on adjacent elements. For example, click
+            on text zone for Twitter videos.
+          </li>
+        </ul>
+      </li>
+      <li>A stopwatch window should be popup.</li>
     </ol>
   </body>
 </html>
