@@ -1,4 +1,4 @@
-(function(){"use strict";var s=`<!DOCTYPE html>
+(function(){"use strict";var l=`<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -36,5 +36,4 @@
     </div>
   </body>
 </html>
-`;if(document.getElementsByTagName("video").length===0&&document.getElementsByTagName("iframe").length>0){var i=document.getElementsByTagName("iframe")[0].src,m=["","about:blank"];m.indexOf(i)===-1&&confirm(`The video may be embedded from another page. Do you want to open the following url instead?
-`+i)&&(window.location=i)}var d,n,c;function t(e){return e.toString().padStart(2,"0")}function u(){var e=d.currentTime,a=Math.floor(e),p=Math.floor((e-a)*100),o=Math.floor(a/60);a-=o*60;var l=Math.floor(o/60);o-=l*60,n.document.getElementById("hour").innerText=t(l),n.document.getElementById("minute").innerText=t(o),n.document.getElementById("second").innerText=t(a),n.document.getElementById("decisecond").innerText=t(p),n.closed&&clearInterval(c)}function r(e){e.target.tagName=="VIDEO"&&(d=e.target,document.removeEventListener("click",r),n=window.open("","","width=250,height=60"),n.document.write(s),c=setInterval(u,5))}document.addEventListener("click",r)})();
+`,c,t,r;function a(n){return n.toString().padStart(2,"0")}function m(){var n=c.currentTime,e=Math.floor(n),s=Math.floor((n-e)*100),o=Math.floor(e/60);e-=o*60;var d=Math.floor(o/60);o-=d*60,t.document.getElementById("hour").innerText=a(d),t.document.getElementById("minute").innerText=a(o),t.document.getElementById("second").innerText=a(e),t.document.getElementById("decisecond").innerText=a(s),t.closed&&clearInterval(r)}function i(n){if(n.target.tagName=="VIDEO"){document.removeEventListener("click",i);for(let e=0;e<document.getElementsByTagName("iframe").length;e++)document.getElementsByTagName("iframe")[e].contentDocument.removeEventListener("click",i);c=n.target,t=window.open("","","width=250,height=60"),t.document.write(l),r=setInterval(m,5)}}document.addEventListener("click",i);for(let n=0;n<document.getElementsByTagName("iframe").length;n++)document.getElementsByTagName("iframe")[n].contentDocument.addEventListener("click",i)})();
