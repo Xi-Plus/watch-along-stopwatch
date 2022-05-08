@@ -1,6 +1,6 @@
 import stopwatch from './stopwatch.html?raw';
 
-var targetVideo, win, intervalId;
+var targetVideo = null, win, intervalId;
 
 function padZero(num) {
 	return num.toString().padStart(2, '0');
@@ -26,6 +26,11 @@ function updateTime() {
 
 function clickCallback(e) {
 	if (e.target.tagName == 'VIDEO') {
+		targetVideo = e.target;
+	} else if (e.target.parentElement.getElementsByTagName('video').length === 1) {
+		targetVideo = e.target.parentElement.getElementsByTagName('video')[0];
+	}
+	if (targetVideo !== null) {
 		document.removeEventListener('click', clickCallback);
 		for (let i = 0; i < document.getElementsByTagName('iframe').length; i++) {
 			if (document.getElementsByTagName('iframe')[i].contentDocument !== null) {
@@ -33,7 +38,6 @@ function clickCallback(e) {
 			}
 		}
 
-		targetVideo = e.target;
 		win = window.open('', '', 'width=250,height=60');
 		win.document.write(stopwatch);
 		intervalId = setInterval(updateTime, 5);
