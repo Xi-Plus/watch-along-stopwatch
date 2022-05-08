@@ -1,5 +1,12 @@
 import stopwatch from './stopwatch.html?raw';
 
+if (document.getElementsByTagName('iframe').length > 0) {
+	var iframeUrl = document.getElementsByTagName('iframe')[0].src;
+	if (confirm('The video may be embedded from another page. Do you want to open the following url instead?\n' + iframeUrl)) {
+		window.location = iframeUrl;
+	}
+}
+
 var targetVideo, win, intervalId;
 
 function padZero(num) {
