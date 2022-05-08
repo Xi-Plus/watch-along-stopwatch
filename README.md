@@ -1,4 +1,5 @@
 # watch-along-stopwatch
+共同視聽碼表
 
 ## 使用方法 How to use
 更簡便的方式請見[此頁面](https://xi-plus.github.io/watch-along-stopwatch/) Find a easier way [here](https://xi-plus.github.io/watch-along-stopwatch/)
