@@ -28,7 +28,9 @@ function clickCallback(e) {
 	if (e.target.tagName == 'VIDEO') {
 		document.removeEventListener('click', clickCallback);
 		for (let i = 0; i < document.getElementsByTagName('iframe').length; i++) {
-			document.getElementsByTagName('iframe')[i].contentDocument.removeEventListener('click', clickCallback);
+			if (document.getElementsByTagName('iframe')[i].contentDocument !== null) {
+				document.getElementsByTagName('iframe')[i].contentDocument.removeEventListener('click', clickCallback);
+			}
 		}
 
 		targetVideo = e.target;
@@ -40,5 +42,7 @@ function clickCallback(e) {
 
 document.addEventListener('click', clickCallback);
 for (let i = 0; i < document.getElementsByTagName('iframe').length; i++) {
-	document.getElementsByTagName('iframe')[i].contentDocument.addEventListener('click', clickCallback);
+	if (document.getElementsByTagName('iframe')[i].contentDocument !== null) {
+		document.getElementsByTagName('iframe')[i].contentDocument.addEventListener('click', clickCallback);
+	}
 }
