@@ -1,4 +1,4 @@
-(function(){"use strict";var l=`<!DOCTYPE html>
+(function(){"use strict";var s=`<!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8" />
@@ -11,13 +11,12 @@
     <style>
       body {
         text-align: center;
-        font-family: "Roboto", sans-serif;
+        font-family: sans-serif;
         color: #000;
         background: #04f404;
       }
 
       #stopwatch {
-        line-height: 1em;
         letter-spacing: 3px;
         font-size: 36px;
       }
@@ -37,4 +36,4 @@
     </div>
   </body>
 </html>
-`,o,n,c;function e(t){return t.toString().padStart(2,"0")}function s(){var t=o.currentTime,i=Math.floor(t),m=Math.floor((t-i)*100),a=Math.floor(i/60);i-=a*60;var r=Math.floor(a/60);a-=r*60,n.document.getElementById("hour").innerText=e(r),n.document.getElementById("minute").innerText=e(a),n.document.getElementById("second").innerText=e(i),n.document.getElementById("decisecond").innerText=e(m),n.closed&&clearInterval(c)}function d(t){t.target.tagName=="VIDEO"&&(o=t.target,document.removeEventListener("click",d),n=window.open("","","width=250,height=60"),n.document.write(l),c=setInterval(s,5))}document.addEventListener("click",d)})();
+`,o,n,c;function e(t){return t.toString().padStart(2,"0")}function l(){var t=o.currentTime,a=Math.floor(t),m=Math.floor((t-a)*100),i=Math.floor(a/60);a-=i*60;var r=Math.floor(i/60);i-=r*60,n.document.getElementById("hour").innerText=e(r),n.document.getElementById("minute").innerText=e(i),n.document.getElementById("second").innerText=e(a),n.document.getElementById("decisecond").innerText=e(m),n.closed&&clearInterval(c)}function d(t){t.target.tagName=="VIDEO"&&(o=t.target,document.removeEventListener("click",d),n=window.open("","","width=250,height=60"),n.document.write(s),c=setInterval(l,5))}document.addEventListener("click",d)})();
