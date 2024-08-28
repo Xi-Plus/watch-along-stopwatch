@@ -1,5 +1,13 @@
 import stopwatch from './stopwatch.html?raw';
 
+let jscode = stopwatch;
+if (window.trustedTypes && trustedTypes.createPolicy) {
+	const escapeHTMLPolicy = trustedTypes.createPolicy('stopwatch', {
+		createHTML: string => string
+	});
+	jscode = escapeHTMLPolicy.createHTML(jscode);
+}
+
 var targetVideo = null, win, intervalId;
 
 function padZero(num) {
@@ -54,7 +62,7 @@ function clickCallback(e) {
 
 	if (targetVideo !== null) {
 		win = window.open('', '', 'width=250,height=60');
-		win.document.write(stopwatch);
+		win.document.write(jscode);
 		intervalId = setInterval(updateTime, 5);
 	} else {
 		alert("I can't find any videos. Please try again.")
